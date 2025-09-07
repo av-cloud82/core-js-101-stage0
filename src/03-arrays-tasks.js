@@ -481,13 +481,11 @@ function sortCitiesArray(arr) {
 function getIdentityMatrix(n) {
   return Array(n)
     .fill(0)
-    .map(function (elem, i) {
-      return Array(n)
+    .map((_, i) =>
+      Array(n)
         .fill(0)
-        .map(function (elem2, j) {
-          return 1 - Math.min(Math.abs(i - j), 1);
-        });
-    });
+        .map((x, j) => 1 - Math.min(Math.abs(i - j), 1))
+    );
 }
 
 /**
